@@ -1,2 +1,8 @@
 # CAML
-CAML: Cell type Auto classification of scRNA-Seq or snRNA-Seq via Machine Learning
+Ensemble learning for classifying single-cell data and projection across reference atlases
+
+Table of Contents
+Installation
+Tutorial
+Contact
+Copyright and License Information
