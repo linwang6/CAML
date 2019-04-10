@@ -2,7 +2,8 @@
 Ensemble learning for classifying single-cell data and projection across reference atlases
 
 Table of Contents
-Installation
-Tutorial
-Contact
-Copyright and License Information
+
+Installation/n
+Tutorial/n
+Contact/n
+Copyright and License Information/n
