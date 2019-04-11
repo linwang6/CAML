@@ -14,15 +14,15 @@ Ensemble learning for classifying single-cell data and projection across referen
       
      How to install packages (Taking imbalanced-learn as example)?
      1. Imbalanced-learn is currently available on the PyPi’s reporitories and you can install it via pip. It's easy to install packages using pip.
-     For example, typing command: pip install -U imbalanced-learn to install 'imbalanced-learn' package.
+       For example, typing command: pip install -U imbalanced-learn to install 'imbalanced-learn' package.
      2. The package is release also in Anaconda Cloud platform.
-     For example, typing command: conda install -c conda-forge imbalanced-learn to install 'imbalanced-learn' package.
+       For example, typing command: conda install -c conda-forge imbalanced-learn to install 'imbalanced-learn' package.
      3. Or install using pip and GitHub.
-     For example, typing command: pip install -U git+https://github.com/scikit-learn-contrib/imbalanced-learn.git to install 'imbalanced-learn' package.
+       For example, typing command: pip install -U git+https://github.com/scikit-learn-contrib/imbalanced-learn.git to install 'imbalanced-learn' package.
      
      
 ## Tutorial
-    #Classification of single-cell data
+    Classification of single-cell data
      
     
     
