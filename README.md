@@ -1,7 +1,7 @@
 # CAML/ELSA?
 **E**nsemble **L**earning for classifying **S**ingle-cell data and projection across reference **A**tlases
 
-### Contents
+## Contents
 #### [Installation](https://github.com/linwang6/CAML#Installation)
 #### [Tutorial](https://github.com/linwang6/CAML#Tutorial)
 #### [Contact](https://github.com/linwang6/CAML#Contact)
@@ -32,8 +32,12 @@
      
      
 ## Tutorial
-    Classification of single-cell data
-     
+#### Classification of single-cell data
+    
+    
+#### Projection of single-cell/single-nuc data 
+    
+    
     
     
 ## Contact
