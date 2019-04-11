@@ -1,5 +1,10 @@
-# CAML
-Ensemble learning for classifying single-cell data and projection across reference atlases
+# CAML/ELSA?
+**E**nsemble **l**earning for classifying **s**ingle-cell data and projection across reference **a**tlases
+
+## [Installation](https://github.com/linwang6/CAML#Installation)
+## [Tutorial](https://github.com/linwang6/CAML#Tutorial)
+## [Contact](https://github.com/linwang6/CAML#Contact)
+## [Copyright and License Information](https://github.com/linwang6/CAML#Copyright and License Information)
 
 
 ## Installation
