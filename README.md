@@ -1,6 +1,7 @@
 # CAML/ELSA?
 **E**nsemble **l**earning for classifying **s**ingle-cell data and projection across reference **a**tlases
 
+### Contents
 ### [Installation](https://github.com/linwang6/CAML#Installation)
 ### [Tutorial](https://github.com/linwang6/CAML#Tutorial)
 ### [Contact](https://github.com/linwang6/CAML#Contact)
