@@ -19,7 +19,6 @@
 #' @example
 #' python2.7, /usr/local/bin/python2.7 caml.py parameters
 
-
 ###################################
 
 import re
@@ -44,84 +43,89 @@ from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import train_test_split
 from pycm import *
 
-#Print help information
-if len(sys.argv) < 11:
+if len(sys.argv) < 12:
     print """
-Usage: caml_v1.py [-t] [-p] [-c] [-g] [-o] [-s]
-arguments:
-  -t, --traning               traning prep data
-  -p, --prediction            prediction prep data
-  -c, --cell_type             cell type list
-  -g, --geneNum               number of top importances
-  -o, --output                output file for cell types
-  -s, --specify (optional)    specific cell type for t cell
+
+Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-c] [-g] [-o] [-s]
+       python caml.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
+
+classification arguments:
+  -m, --cell_marker       	list for cell marker
+  -i, --input_file        	input data for classification
+  -c, --cell_type         	cell type list
+  -g, --geneNum           	number of top importances
+  -o, --output            	output file for cell types
+  -s, --specify (optional)      specific cell type for extend, for example -s CD4:CD8
+
+projection arguments:
+  -t, --traning           	traning prep data
+  -p, --prediction        	prediction prep data
+  -c, --cell_type         	cell type list
+  -g, --geneNum           	number of top importances
+  -o, --output            	output file for cell types
+  -s, --specify (optional)      specific cell type for t cell
+
 """
 
 ###################################
-if len(sys.argv) == 11:
-        addType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_addType'
-        os.system(addType)
-        featureSelection='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/feature_selection_RF.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+'_featureImportance'
-        os.system(featureSelection)
-        featureSort='sort -k 2 -r -g '+'%s'%sys.argv[2]+'_featureImportance >'+'%s'%sys.argv[2]+'_featureImportanceSort'
-        os.system(featureSort)
-        featureTop='head -n '+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+'_featureImportanceSort >'+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]
-        os.system(featureTop)
-        train='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'
-        os.system(train)
-        pred='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'
-        os.system(pred)
-        trainType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'
-        os.system(trainType)
-        predType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'
-        os.system(predType)
-        caml='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/run_caml.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'+' -o '+'%s'%sys.argv[10]
-        os.system(caml)
+
+#Run classification job
+
+if len(sys.argv) == 13:
+  if 'classification' in sys.argv[1]:
+    if 'scell' in sys.argv[2] or 'snuc' in sys.argv[2]:
+      trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestSC.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
+      os.system(trainSelectList)
+      trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
+      os.system(trainSelectEx)
+      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]
+      os.system(caml)
+
+    if 'bulk' in sys.argv[2]:
+      trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestBulk.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
+      os.system(trainSelectList)
+      trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
+      os.system(trainSelectEx)
+      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]
+      os.system(caml)
+
+if len(sys.argv) == 15:
+  if 'classification' in sys.argv[1]:
+    if 'scell' in sys.argv[2] or 'snuc' in sys.argv[2]:
+      trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestBulk.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
+      os.system(trainSelectList)
+      trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
+      os.system(trainSelectEx)
+      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]+' -s '+'%s'%sys.argv[14]
+      os.system(caml)
+
+    if 'bulk' in sys.argv[2]:
+      trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestBulk.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
+      os.system(trainSelectList)
+      trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
+      os.system(trainSelectEx)
+      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]+' -s '+'%s'%sys.argv[14]
+      os.system(caml)    
 
 
 ###################################
+
+
+#Run projection job
+
 if len(sys.argv) == 13:
-        addType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_addType'
-        os.system(addType)
-        featureSelection='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/feature_selection_RF.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+'_featureImportance'
-        os.system(featureSelection)
-        featureSort='sort -k 2 -r -g '+'%s'%sys.argv[2]+'_featureImportance >'+'%s'%sys.argv[2]+'_featureImportanceSort'
-        os.system(featureSort)
-        featureTop='head -n '+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+'_featureImportanceSort >'+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]
-        os.system(featureTop)
-        train='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'
-        os.system(train)
-        pred='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'
-        os.system(pred)
-        trainType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'
-        os.system(trainType)
-        predType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'
-        os.system(predType)
-        caml='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/run_caml.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'+' -o '+'%s'%sys.argv[10]
-        os.system(caml)
-        subCell1='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/extractTrainCell.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[12]+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[10]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_sub'
-        #print subCell1
-        os.system(subCell1)
-        addTypeSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[2]+'_subType'
-        os.system(addTypeSub)
-        featureSelectionSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/feature_selection_RF.py '+'%s'%sys.argv[2]+'_subType'+' '+'%s'%sys.argv[2]+'_subType_featureImportance'
-        os.system(featureSelectionSub)
-        featureSortSub='sort -k 2 -r -g '+'%s'%sys.argv[2]+'_subType_featureImportance >'+'%s'%sys.argv[2]+'_subType_featureImportanceSort'
-        os.system(featureSortSub)
-        featureTopSub='head -n 20'+' '+'%s'%sys.argv[2]+'_subType_featureImportanceSort >'+'%s'%sys.argv[2]+'_subType_featureImportanceTop10'
-        os.system(featureTopSub)
-        trainSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10'+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10Train'
-        os.system(trainSub)
-        predSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10'+' '+'%s'%sys.argv[4]+'_sub'+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'
-        os.system(predSub)
-        trainTypeSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10Train'+' '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10TrainType'
-        os.system(trainTypeSub)
-        predTypeSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10PredType'
-        os.system(predTypeSub)
-        camlSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/run_caml.py -t '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10TrainType'+' -p '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10PredType'+' -o '+'%s'%sys.argv[10]+'subType'
-        os.system(camlSub)
-        camlMerg='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/confusionMatrix.py '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'+' '+'%s'%sys.argv[10]+' '+'%s'%sys.argv[10]+'subType'+' '+'%s'%sys.argv[10]+'MergType'
-        os.system(camlMerg)
-        
-        
-        
+  if 'projection' in sys.argv[1]:
+    caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]
+    print caml
+    os.system(caml)
+if len(sys.argv) == 15:
+  if 'projection' in sys.argv[1]:
+    caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]+' -s '+'%s'%sys.argv[14]
+    print caml
+    os.system(caml)
+
+
+###################################
+
+
+
