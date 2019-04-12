@@ -34,7 +34,7 @@
 ## Tutorial
     Please simply typing command: python caml.py
     It gives you help information for caml,
-    
+    $ python caml.py
     Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-c] [-g] [-o] [-s]
            python caml.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
 
@@ -53,10 +53,10 @@
      -g, --geneNum           	   number of top importances
      -o, --output            	   output file for cell types
      -s, --specify (optional)      specific cell type for t cell
-
+     
 
 #### Classification of single-cell data
-    
+
     
 #### Projection of single-cell/single-nuc data 
     
