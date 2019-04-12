@@ -34,8 +34,9 @@
 ## Tutorial
     Please simply typing command: python caml.py
     It gives you help information for caml,
+    
     Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-c] [-g] [-o] [-s]
-       python caml.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
+           python caml.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
 
     classification arguments:
      -m, --cell_marker       	   list for cell marker
