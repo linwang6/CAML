@@ -32,6 +32,28 @@
      
      
 ## Tutorial
+    Please simply typing command: python caml.py
+    It gives you help information for caml,
+    Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-c] [-g] [-o] [-s]
+       python caml.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
+
+    classification arguments:
+     -m, --cell_marker       	   list for cell marker
+     -i, --input_file        	   input data for classification
+     -c, --cell_type         	   cell type list
+     -g, --geneNum             	   number of top importances
+     -o, --output            	   output file for cell types
+     -s, --specify (optional)      specific cell type for extend, for example -s CD4:CD8
+
+    projection arguments:
+     -t, --traning           	   traning prep data
+     -p, --prediction        	   prediction prep data
+     -c, --cell_type         	   cell type list
+     -g, --geneNum           	   number of top importances
+     -o, --output            	   output file for cell types
+     -s, --specify (optional)      specific cell type for t cell
+
+
 #### Classification of single-cell data
     
     
