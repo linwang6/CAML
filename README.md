@@ -52,13 +52,17 @@
      -c, --cell_type         	   cell type list
      -g, --geneNum           	   number of top importances
      -o, --output            	   output file for cell types
-     -s, --specify (optional)          specific cell type for t cell
+     -s, --specify (optional)          specific cell type for extend, for example -s CD4:CD8
      
 
-#### Classification of single-cell data
+#### Classification of single-cell/single-nuc/bulk RNA-Seq data
+For cell types of classification, two files are needed for input, one is normalized gene expression data of single-cell/single-nuc/bulk RNA-Seq, another one file is the cell markers. The format of the cell markers should be like this:
+    Monocytes:"CD14";"FCGR1A";"CD68"
+    B:"CD19";"MS4A1";"CD79A"
+    DC:"IL3RA";"CD1C";"BATF3"
 
     
-#### Projection of single-cell/single-nuc data 
+#### Projection of single-cell/single-nuc/bulk RNA-Seq data 
     
     
     
