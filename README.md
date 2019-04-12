@@ -44,7 +44,7 @@
      -c, --cell_type         	   cell type list
      -g, --geneNum             	   number of top importances
      -o, --output            	   output file for cell types
-     -s, --specify (optional)      specific cell type for extend, for example -s CD4:CD8
+     -s, --specify (optional)          specific cell type for extend, for example -s CD4:CD8
 
     projection arguments:
      -t, --traning           	   traning prep data
@@ -52,7 +52,7 @@
      -c, --cell_type         	   cell type list
      -g, --geneNum           	   number of top importances
      -o, --output            	   output file for cell types
-     -s, --specify (optional)      specific cell type for t cell
+     -s, --specify (optional)          specific cell type for t cell
      
 
 #### Classification of single-cell data
