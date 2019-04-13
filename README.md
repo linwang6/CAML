@@ -1,6 +1,9 @@
 # CAML/ELSA?
 **E**nsemble **L**earning for classifying **S**ingle-cell data and projection across reference **A**tlases
 
+![alt text](https://github.com/linwang6/CAML/blob/master/inst/CAML.jpg)
+
+
 ## Contents
 #### [Installation](https://github.com/linwang6/CAML#Installation)
 #### [Tutorial](https://github.com/linwang6/CAML#Tutorial)
@@ -64,7 +67,6 @@ For the classification of cell types, two input files are needed, one is the nor
     DC:"IL3RA";"CD1C";"BATF3"
     CD34:"CD34"
     NK:"FCGR3A"
-
     ...
     
     ivyGAP data:
@@ -79,7 +81,7 @@ For the classification of cell types, two input files are needed, one is the nor
 
 #### Projection of single-cell/single-nuc/bulk RNA-Seq data 
     
-    
+    /usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/caml_classity_project.py projection scell -t SF11644T_SF11956T_SF11977T_SF11979T_PCA_PC16_new5_scale.data_share_tr -p 2018-03-29_Ivy_GAP_pheno_1_sortByAnn_Ex_head_tr_share_tr -c 2018-03-29_Ivy_GAP_pheno_1_sortByAnn_2_1_addHGG -g 10 -o Ivy_GAP2HGG_g10.2
     
     
 ## Contact
