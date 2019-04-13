@@ -56,12 +56,27 @@
      
 
 #### Classification of single-cell/single-nuc/bulk RNA-Seq data
-For cell types of classification, two files are needed for input, one is normalized gene expression data of single-cell/single-nuc/bulk RNA-Seq, another one file is the cell markers. The format of the cell markers should be like this:
+For the classification of cell types, two input files are needed, one is the normalized gene expression data of single-cell/single-nuc/bulk RNA-Seq, another one file is the cell markers. The format of the cell markers files should be like this:
 
+    PBMC data:
     Monocytes:"CD14";"FCGR1A";"CD68"
     B:"CD19";"MS4A1";"CD79A"
     DC:"IL3RA";"CD1C";"BATF3"
+    CD34:"CD34"
+    NK:"FCGR3A"
+
+    ...
     
+    ivyGAP data:
+    Infiltrating_Tumor:"SNAP25";"UHRF1"
+    Microvascular_proliferation:"KLF6";"ELTD1"
+    Pseudopalisading_cells:"TREM
+    Leading_Edge:"SNAP25"
+    ...
+
+
+
+
 #### Projection of single-cell/single-nuc/bulk RNA-Seq data 
     
     
