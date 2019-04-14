@@ -106,8 +106,11 @@ Lin Wang Lin.Wang2@ucsf.edu
 
 Aaron Diaz Aaron.Diaz@ucsf.edu
 
-Diaz Lab https://github.com/diazlab
-         https://diazlab.ucsf.edu/
+Diaz Lab
+
+https://github.com/diazlab
+
+https://diazlab.ucsf.edu/
     
     
 ## Copyright and License Information
