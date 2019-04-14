@@ -88,7 +88,11 @@ And the format of the cell markers file should be like this:
     Leading_Edge:"SNAP25"
     ...
 
+When the files are ready, then we can run the Classification subprogram, 
+    
+    python caml.py -m markers.list -i gene_exxpression_data -g 50 -o classification
 
+please note that the parameter -g for the feature selection, setting the '-g 50' should work well for most of the cases (please note that when you want to classify more than 10 different classes, please increasing the number to number of desired classification * 10). 
 
 
 #### Projection of single-cell/single-nuc/bulk RNA-Seq data 
