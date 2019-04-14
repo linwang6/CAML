@@ -1,0 +1,5 @@
+Leading_Edge:"SNAP25"
+Infiltrating_Tumor:"SNAP25";"UHRF1"
+Cellular_Tumor:"UHRF1"
+Microvascular_proliferation:"KLF6";"ELTD1"
+Pseudopalisading_cells:"TREM1"
