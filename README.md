@@ -71,7 +71,7 @@ For the classification of cell types, two input files are needed, one is the nor
 
 
 
-The format of the cell markers files should be like this:
+And the format of the cell markers file should be like this:
 
     PBMC data:
     Monocytes:"CD14";"FCGR1A";"CD68"
