@@ -103,7 +103,9 @@ please note that the parameter -g for the feature selection, setting the '-g 50'
 ## Contact
 
 Lin Wang Lin.Wang2@ucsf.edu
+
 Aaron Diaz Aaron.Diaz@ucsf.edu
+
 Diaz Lab https://github.com/diazlab
          https://diazlab.ucsf.edu/
     
