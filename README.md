@@ -90,9 +90,9 @@ And the format of the cell markers file should be like this:
 
 When the files are ready, then we can run the Classification subprogram, 
     
-    python caml.py -m markers.list -i gene_exxpression_data -g 50 -o classification
+    python caml.py Classification -m markers.list -i gene_exxpression_data -g 50 -o classification
 
-please note that the parameter -g for the feature selection, setting the '-g 50' should work well for most of the cases (Please see our paper). Please note that when you want to classify more than 10 different classes, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. 
+please note that the parameter -g for the feature selection, setting the '-g 50' should work well for most of the cases (Please see our paper). Please note that when you want to classify more than 10 different classes or more, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. 
 
 
 #### Projection of single-cell/single-nuc/bulk RNA-Seq data 
@@ -101,7 +101,11 @@ please note that the parameter -g for the feature selection, setting the '-g 50'
     
     
 ## Contact
-    
+
+Lin Wang Lin.Wang2@ucsf.edu
+Aaron Diaz Aaron.Diaz@ucsf.edu
+Diaz Lab https://github.com/diazlab
+         https://diazlab.ucsf.edu/
     
     
 ## Copyright and License Information
