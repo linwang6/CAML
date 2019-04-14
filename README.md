@@ -1,5 +1,5 @@
 # CAML/ELSA?
-**E**nsemble **L**earning for classifying **S**ingle-cell data and projection across reference **A**tlases
+### **E**nsemble **L**earning for classifying **S**ingle-cell data and projection across reference **A**tlases
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/CAML.jpg)
 
@@ -59,7 +59,19 @@
      
 
 #### Classification of single-cell/single-nuc/bulk RNA-Seq data
-For the classification of cell types, two input files are needed, one is the normalized gene expression data of single-cell/single-nuc/bulk RNA-Seq, another one file is the cell markers. The format of the cell markers files should be like this:
+For the classification of cell types, two input files are needed, one is the normalized gene expression data of single-cell/single-nuc/bulk RNA-Seq, another one file is the cell markers. The gene expression data file should be a matrix (cell by gene), the column is the gene expression and the row is the cell ID, for example,
+    
+        "RP11-34P13.3" "FAM138A" "OR4F5" "RP11-34P13.7" "RP11-34P13.8" "RP11-34P13.14" "RP11-34P13.9"
+    "AAACCTGAGCATCATC" 0 0 0 0 0 0 0
+    "AAACCTGAGCTAACTC" 0.758984278767459 0 0 0 0 0.758984278767459 0.758984278767459
+    "AAACCTGAGCTAGTGG" 0 0 0 0 0 0 0
+    "AAACCTGCACATTAGC" 0 0 0 0 0 0 1.34676065446578
+    "AAACCTGCACTGTTAG" 0 0 0.731934085294069 0 0 0 0
+    "AAACCTGCATAGTAAG" 0 0 0 0 0 0 0
+
+
+
+The format of the cell markers files should be like this:
 
     PBMC data:
     Monocytes:"CD14";"FCGR1A";"CD68"
