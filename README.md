@@ -58,7 +58,7 @@
      -s, --specify (optional)          specific cell type for extend, for example -s CD4:CD8
      
 
-#### Classification of single-cell/single-nuc/bulk RNA-Seq data
+### Classification of single-cell/single-nuc/bulk RNA-Seq data
 For the classification of cell types, two input files are needed, one is the normalized gene expression data of single-cell/single-nuc/bulk RNA-Seq, another one file is the cell markers. The gene expression data file should be a matrix (cell by gene), the column is the gene expression and the row is the cell ID, for example,
     
         "RP11-34P13.3" "FAM138A" "OR4F5" "RP11-34P13.7" "RP11-34P13.8" "RP11-34P13.14" "RP11-34P13.9"
@@ -124,7 +124,7 @@ The tSNE plot of predicted samples types and the anatomic structure annotation t
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_tSNE.png)
 
 
-#### Projection of single-cell/single-nuc/bulk RNA-Seq data 
+### Projection of single-cell/single-nuc/bulk RNA-Seq data 
     
     /usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/caml_classity_project.py projection scell -t SF11644T_SF11956T_SF11977T_SF11979T_PCA_PC16_new5_scale.data_share_tr -p 2018-03-29_Ivy_GAP_pheno_1_sortByAnn_Ex_head_tr_share_tr -c 2018-03-29_Ivy_GAP_pheno_1_sortByAnn_2_1_addHGG -g 10 -o Ivy_GAP2HGG_g10.2
     
