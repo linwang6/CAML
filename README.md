@@ -99,7 +99,7 @@ The output file contains all the information including the cell/sample ID, the p
 
 
     
-    Cell_ID Probability_of_Cellular_Tumor   Probability_Infiltrating_Tumor   Probability_Leading_Edge Probability_Microvascular_proliferation    Probability_Pseudopalisading_cells
+    Cell_ID Probability_of_Cellular_Tumor   Probability_Infiltrating_Tumor   Probability_Leading_Edge Probability_Microvascular_proliferation    Probability_Pseudopalisading_cells Predicted_types
     "304950296"     2.6800024884849247e-14  1.8189894035424017e-12  2.6800024884849247e-14  0.9999999999981006      2.6800024884849247e-14  Microvascular_proliferation 
     "304357559"     1.987101672593777e-08   1.490116037632912e-08   2.1954579181221763e-10  0.9999999451372603      1.9871016725937764e-08  Microvascular_proliferation 
     "300173642"     1.646359585919862e-10   1.0113806499514636e-06  1.646359585919862e-10   1.1174283061586529e-08  0.999998977115795       Pseudopalisading_cells 
@@ -116,11 +116,11 @@ The output file contains all the information including the cell/sample ID, the p
     "301626609"     2.4256613183435653e-12  0.999999985091562       2.4256613183435653e-12  1.4901160971694644e-08  2.4256613183435653e-12  Infiltrating_Tumor 
     
 
-The sankey plot 
+The following sankey plot of the predicted samples types compared to the anatomic structure annotation types  (http://glioblastoma.alleninstitute.org/).
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_sankey.png)
 
 
-The tSNE plot 
+The tSNE plot of predicted samples types and the anatomic structure annotation types
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_tSNE.png)
 
 
