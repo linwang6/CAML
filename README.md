@@ -92,11 +92,30 @@ When the files are ready, then we can run the Classification subprogram,
     
     python caml.py classification -m markers.list -i gene_exxpression_data -g 50 -o classification_output -s subtypes extension (optional)
 
-please note that the parameter -g for the feature selection, setting the '-g 50' should work well for most of the cases (Please see our paper). Please note that when you want to classify more than 10 different classes or more, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. And the optional parameter -s, we suggest you include it when there are closely cell subtypes, for example CD4 and CD8 cell types.
+Please note that the parameter -g for the feature selection, setting the '-g 50' should work well for most of the cases (Please see our paper). Please note that when you want to classify more than 10 different classes or more, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. And the optional parameter -s, we suggest you include it when there are closely cell subtypes, for example CD4 and CD8 cell types.
 
-The output 
-The sankey plot
-The tSNE plot
+
+The output file contains all the information including the cell/sample ID, the predicted class probabilities and predicted cell/sample types, here we show two examples, one is for single cell classification and another one is for bulk RNA-seq data (ivy GAP, [Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
+
+
+    
+    "304950296"     2.6800024884849247e-14  1.8189894035424017e-12  2.6800024884849247e-14  0.9999999999981006      2.6800024884849247e-14  Microvascular_proliferation 
+    "304357559"     1.987101672593777e-08   1.490116037632912e-08   2.1954579181221763e-10  0.9999999451372603      1.9871016725937764e-08  Microvascular_proliferation 
+    "300173642"     1.646359585919862e-10   1.0113806499514636e-06  1.646359585919862e-10   1.1174283061586529e-08  0.999998977115795       Pseudopalisading_cells 
+    "300629346"     0.00012205516448045012  1.0112561795191147e-06  1.4899312070367482e-08  1.0112561795191142e-06  0.9998759074238485      Pseudopalisading_cells 
+    "301626601"     1.818989403090102e-12   1.234596782500497e-10   0.9999999997494426      1.2345967825004966e-10  1.818989403090102e-12   Leading_Edge 
+    "301626695"     1.646359585919862e-10   1.0113806499514636e-06  0.999998977115795       1.1174283061586529e-08  1.646359585919862e-10   Leading_Edge 
+    "300173646"     2.6800024884849247e-14  1.8189894035424017e-12  2.6800024884849247e-14  0.9999999999981006      2.6800024884849247e-14  Microvascular_proliferation 
+    "300629309"     2.6800024884849247e-14  1.8189894035424017e-12  2.6800024884849247e-14  0.9999999999981006      2.6800024884849247e-14  Microvascular_proliferation 
+    "302264000"     0.5713929269045216      5.2305205949612394e-05  7.70637156174121e-07    0.4284842471392252      6.975011314752466e-05   Cellular_Tumor 
+    "303748328"     0.00012205513697496831  1.2366088240428581e-06  1.489930871276471e-08   1.0112559516296298e-06  0.9998756820989407      Pseudopalisading_cells 
+    "301626689"     0.9917818182116735      0.008217149160959135    1.4778700742299505e-08  1.0030699659373927e-06  1.4778700742299505e-08  Cellular_Tumor 
+    "301287582"     0.9999999997219304      1.5097199407061566e-10  1.8189894030400575e-12  1.2345967824665307e-10  1.8189894030400575e-12  Cellular_Tumor 
+    "300629356"     2.4256613183435653e-12  0.999999985091562       2.4256613183435653e-12  1.4901160971694644e-08  2.4256613183435653e-12  Infiltrating_Tumor 
+    "301626609"     2.4256613183435653e-12  0.999999985091562       2.4256613183435653e-12  1.4901160971694644e-08  2.4256613183435653e-12  Infiltrating_Tumor 
+    
+The sankey plot 
+The tSNE plot 
 
 
 #### Projection of single-cell/single-nuc/bulk RNA-Seq data 
