@@ -81,70 +81,70 @@ arguments:
 
 ###################################
 if len(sys.argv) == 11:
-        addType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_addType'
-        os.system(addType)
-        featureSelection='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/feature_selection_RF.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+'_featureImportance'
-        os.system(featureSelection)
-        featureSort='sort -k 2 -r -g '+'%s'%sys.argv[2]+'_featureImportance >'+'%s'%sys.argv[2]+'_featureImportanceSort'
-        os.system(featureSort)
-        featureTop='head -n '+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+'_featureImportanceSort >'+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]
-        os.system(featureTop)
-        train='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'
-        os.system(train)
-        pred='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'
-        os.system(pred)
-        trainType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'
-        os.system(trainType)
-        #predType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'
-        #os.system(predType)
-        caml='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/run_caml.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' -o '+'%s'%sys.argv[10]
-        os.system(caml)
+	addType='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_addType'
+	os.system(addType)
+	featureSelection='/usr/local/bin/python2.7 ../resources/feature_selection_RF.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+'_featureImportance'
+	os.system(featureSelection)
+	featureSort='sort -k 2 -r -g '+'%s'%sys.argv[2]+'_featureImportance >'+'%s'%sys.argv[2]+'_featureImportanceSort'
+	os.system(featureSort)
+	featureTop='head -n '+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+'_featureImportanceSort >'+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]
+	os.system(featureTop)
+	train='/usr/local/bin/python2.7 ../resources/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'
+	os.system(train)
+	pred='/usr/local/bin/python2.7 ../resources/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'
+	os.system(pred)
+	trainType='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'
+	os.system(trainType)
+	#predType='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'
+	#os.system(predType)
+	caml='/usr/local/bin/python2.7 ../resources/run_caml.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' -o '+'%s'%sys.argv[10]
+	os.system(caml)
 
 
 ###################################
 if len(sys.argv) == 13:
-        addType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_addType'
+	addType='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_addType'
         os.system(addType)
-        featureSelection='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/feature_selection_RF.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+'_featureImportance'
+        featureSelection='/usr/local/bin/python2.7 ../resources/feature_selection_RF.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+'_featureImportance'
         os.system(featureSelection)
         featureSort='sort -k 2 -r -g '+'%s'%sys.argv[2]+'_featureImportance >'+'%s'%sys.argv[2]+'_featureImportanceSort'
         os.system(featureSort)
         featureTop='head -n '+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+'_featureImportanceSort >'+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]
         os.system(featureTop)
-        train='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'
+        train='/usr/local/bin/python2.7 ../resources/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'
         os.system(train)
-        pred='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'
+        pred='/usr/local/bin/python2.7 ../resources/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_featureImportanceTop'+'%s'%sys.argv[8]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'
         os.system(pred)
-        trainType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'
+        trainType='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrain'+' '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'
         os.system(trainType)
-        #predType='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'
+        #predType='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'
         #os.system(predType)
-        caml='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/run_caml.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' -o '+'%s'%sys.argv[10]
+        caml='/usr/local/bin/python2.7 ../resources/run_caml.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' -o '+'%s'%sys.argv[10]
         os.system(caml)
-        subCell1='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/extractTrainCell.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[12]+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[10]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_sub'
-        #print subCell1
-        os.system(subCell1)
-        addTypeSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[2]+'_subType'
-        os.system(addTypeSub)
-        featureSelectionSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/feature_selection_RF.py '+'%s'%sys.argv[2]+'_subType'+' '+'%s'%sys.argv[2]+'_subType_featureImportance'
-        os.system(featureSelectionSub)
-        featureSortSub='sort -k 2 -r -g '+'%s'%sys.argv[2]+'_subType_featureImportance >'+'%s'%sys.argv[2]+'_subType_featureImportanceSort'
+	subCell1='/usr/local/bin/python2.7 ../resources/extractTrainCell.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[12]+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[10]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_sub'
+	#print subCell1
+	os.system(subCell1)
+	addTypeSub='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[2]+'_subType'
+	os.system(addTypeSub)
+	featureSelectionSub='/usr/local/bin/python2.7 ../resources/feature_selection_RF.py '+'%s'%sys.argv[2]+'_subType'+' '+'%s'%sys.argv[2]+'_subType_featureImportance'
+	os.system(featureSelectionSub)
+	featureSortSub='sort -k 2 -r -g '+'%s'%sys.argv[2]+'_subType_featureImportance >'+'%s'%sys.argv[2]+'_subType_featureImportanceSort'
         os.system(featureSortSub)
         featureTopSub='head -n 20'+' '+'%s'%sys.argv[2]+'_subType_featureImportanceSort >'+'%s'%sys.argv[2]+'_subType_featureImportanceTop10'
         os.system(featureTopSub)
-        trainSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10'+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10Train'
+        trainSub='/usr/local/bin/python2.7 ../resources/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10'+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10Train'
         os.system(trainSub)
-        predSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10'+' '+'%s'%sys.argv[4]+'_sub'+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'
+        predSub='/usr/local/bin/python2.7 ../resources/parse_getID4matrixEx.py '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10'+' '+'%s'%sys.argv[4]+'_sub'+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'
         os.system(predSub)
-        trainTypeSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10Train'+' '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10TrainType'
+        trainTypeSub='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10Train'+' '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10TrainType'
         os.system(trainTypeSub)
-        #predTypeSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10PredType'
+        #predTypeSub='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10PredType'
         #os.system(predTypeSub)
-        camlSub='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/run_caml.py -t '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10TrainType'+' -p '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'+' -o '+'%s'%sys.argv[10]+'subType'
+	camlSub='/usr/local/bin/python2.7 ../resources/run_caml.py -t '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10TrainType'+' -p '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'+' -o '+'%s'%sys.argv[10]+'subType'
         os.system(camlSub)
-        camlMerg='/usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/confusionMatrix.py '+'%s'%sys.argv[10]+' '+'%s'%sys.argv[10]+'subType'+' '+'%s'%sys.argv[10]+'MergeType'
+	camlMerg='/usr/local/bin/python2.7 ../resources/confusionMatrix.py '+'%s'%sys.argv[10]+' '+'%s'%sys.argv[10]+'subType'+' '+'%s'%sys.argv[10]+'MergeType'
         os.system(camlMerg)
-        
-        
-        
+	
+	
+	
 
