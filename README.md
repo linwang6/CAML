@@ -187,7 +187,7 @@ The following sankey plot is the projection snRNA-Seq to scRNA-Seq.
 #### Projection bulk RNA-Seq to scRNA-Seq.
 
 
-The following sankey plot is the projection bulk RNA-Seq data ([ivy GAP](http://glioblastoma.alleninstitute.org/)) to scRNA-Seq ([our GBM scRNA-Seq data]).
+The following sankey plot is the projection bulk RNA-Seq data ([ivy GAP](http://glioblastoma.alleninstitute.org/)) to scRNA-Seq ([our novel GBM scRNA-Seq data]()).
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/ivyGAP2GBM.png)
 
 
