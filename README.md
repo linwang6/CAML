@@ -165,17 +165,17 @@ The tSNE plot of predicted samples types and the anatomic structure annotation t
     
     python caml.py projection scell -t reference_expression_matrix -p projection_expression_matrix -c reference_cell_types -g 50 -o projection_to_reference_output
     
-#### Projection across of different scRNA-Seq platforms
+#### Projection of different scRNA-Seq platforms
 
 
 Projection of the Smart-seq2 platform (human pancreas data sets, [Segerstolpe et al](https://www.sciencedirect.com/science/article/pii/S1550413116304363?via%3Dihub).) to inDrop platform ([Baron et al](https://www.sciencedirect.com/science/article/pii/S2405471216302666?via%3Dihub).)
 
 
-The tSNE plot of reference cell types (left) and projection cell types (right)
+The tSNE plot of cell types of reference (left) and projection (right)
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/Pancreas_tSNE.png)
 
 
-The following sankey plot of the reference cell types and projection cell types
+The following sankey plot of the cell types of reference and projection
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/Pancreas_sankey.png)
 
 
@@ -184,7 +184,7 @@ The following sankey plot of the reference cell types and projection cell types
 The snRNA-Seq data (from cortex, Lake et al) and scRNA-Seq data (Lake et al) was available [here](https://www.nature.com/articles/s41598-017-04426-w).
 
 
-The following sankey plot is the projection snRNA-Seq to scRNA-Seq.
+The following sankey plot is the projection of snRNA-Seq to scRNA-Seq.
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/snRNA-Seq2scRNA-Seq.png)
 
 
@@ -192,7 +192,7 @@ The following sankey plot is the projection snRNA-Seq to scRNA-Seq.
 #### Projection bulk RNA-Seq to scRNA-Seq.
 
 
-The following sankey plot is the projection bulk RNA-Seq data ([ivy GAP](http://glioblastoma.alleninstitute.org/)) to scRNA-Seq ([our novel GBM scRNA-Seq data]()).
+The following sankey plot is the projection of bulk RNA-Seq data ([ivy GAP](http://glioblastoma.alleninstitute.org/)) to scRNA-Seq ([our novel GBM scRNA-Seq data]()).
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/ivyGAP2GBM.png)
 
