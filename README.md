@@ -198,10 +198,11 @@ The following sankey plot is the projection of snRNA-Seq to scRNA-Seq.
 #### Projection of bulk RNA-Seq to scRNA-Seq.
 
 
-The following sankey plot is the projection of bulk RNA-Seq data ([ivy GAP](http://glioblastoma.alleninstitute.org/)) to scRNA-Seq ([our novel GBM scRNA-Seq data]()).
+The following sankey plot is the projection of bulk RNA-Seq data ([ivy GAP](http://glioblastoma.alleninstitute.org/)) to scRNA-Seq (MES: mesenchymal, PN: proneural, [our novel GBM scRNA-Seq data]()). 
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/ivyGAP2GBM.png)
 
+We found that mGSCs are enriched in hypoxic regions, while the PGSCs are enriched in the tumor’s leading edge.
 
 
 ## Contact
