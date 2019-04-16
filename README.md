@@ -77,7 +77,7 @@ For the classification of cell types, two input files are needed, one is the nor
 
 And the format of the cell markers file should be like this:
 
-    PBMC data:
+    PBMC (peripheral blood mononuclear cell) data:
     Monocytes:"CD14";"FCGR1A";"CD68"
     B:"CD19";"MS4A1";"CD79A"
     DC:"IL3RA";"CD1C";"BATF3"
@@ -102,9 +102,11 @@ Please note that the parameter -g for the feature selection, setting the '-g 50'
 The output file contains all the information including the cell/sample ID, the predicted class probabilities and predicted cell/sample types, here we show two examples, one is for single cell classification (PBMC dataset was available [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets)) and another one dataset is for bulk RNA-seq data ([ivy GAP, Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
 
 
-#### scRNA-Seq (PBMC dataset)   
+#### scRNA-Seq (PBMC dataset)
 
-Output file:
+Firstly, we applied the tool to PBMC data set, which has seven different cell types including CD4, CD8, DC, NK, B, CD34 and Monocyte type. For this type of dataset (when you want to classify one type cell into different subtypes, for example, classifying T cell into CD4 and CD8 T cell), we highly recommend add the parameter '-s CD4:CD8', which gives more accurate classification results.
+
+The following is part of the output file:
     
     Cell_ID Probability_of_CD34   Probability_of_B  Probability_of_CD4    Probability_of_CD8  Probability_of_DC    Probability_of_Monocytes    Probability_of_NK   Predicted_types
     "AAACCTGAGCTAACTC"      0.00037265905209929966  0.00019461235341044442  0.018780001757902304    0.0069075896125628325   0.002850644369198496    0.9516413165740238      0.01925317628080269     Monocytes       
@@ -130,8 +132,10 @@ The tSNE plot of gene markers based cell types (left) and predicted samples type
 
 #### Bulk RNA-Seq ([ivy GAP](http://glioblastoma.alleninstitute.org/))
 
+Our tool also can be used for bulk RNA-Seq samples types calssification, here we show the classification of the ivyGAP data, which has detailed anatomic structure annotation types.
 
-Output file:
+
+The following is part of output file:
     
     Cell_ID Probability_of_Cellular_Tumor   Probability_Infiltrating_Tumor   Probability_Leading_Edge Probability_Microvascular_proliferation    Probability_Pseudopalisading_cells Predicted_types
     "304950296"     2.6800024884849247e-14  1.8189894035424017e-12  2.6800024884849247e-14  0.9999999999981006      2.6800024884849247e-14  Microvascular_proliferation 
