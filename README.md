@@ -125,6 +125,7 @@ The tSNE plot of gene markers based cell types (left) and predicted samples type
 
 #### Bulk RNA-Seq ([ivy GAP](http://glioblastoma.alleninstitute.org/))
 
+
 Output file:
     
     Cell_ID Probability_of_Cellular_Tumor   Probability_Infiltrating_Tumor   Probability_Leading_Edge Probability_Microvascular_proliferation    Probability_Pseudopalisading_cells Predicted_types
@@ -144,12 +145,15 @@ Output file:
     "301626609"     2.4256613183435653e-12  0.999999985091562       2.4256613183435653e-12  1.4901160971694644e-08  2.4256613183435653e-12  Infiltrating_Tumor 
     
 
+
 The following sankey plot of the predicted samples types compared to the anatomic structure annotation types  (http://glioblastoma.alleninstitute.org/).
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_sankey.png)
 
 
+
 The tSNE plot of predicted samples types and the anatomic structure annotation types
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_tSNE.png)
+
 
 
 ### Projection of single-cell/single-nuc/bulk RNA-Seq data 
@@ -158,10 +162,13 @@ The tSNE plot of predicted samples types and the anatomic structure annotation t
     
 #### Projection across of different scRNA-Seq platforms
 
+
 Projection of the Smart-seq2 platform (human pancreas data sets, [Segerstolpe et al](https://www.sciencedirect.com/science/article/pii/S1550413116304363?via%3Dihub).) to inDrop platform ([Baron et al](https://www.sciencedirect.com/science/article/pii/S2405471216302666?via%3Dihub).)
+
 
 The tSNE plot of reference cell types (left) and projection cell types (right)
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/Pancreas_tSNE.png)
+
 
 The following sankey plot of the reference cell types and projection cell types
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/Pancreas_sankey.png)
@@ -171,8 +178,10 @@ The following sankey plot of the reference cell types and projection cell types
 
 The snRNA-Seq data (from cortex) and scRNA-Seq data was available [here](https://www.nature.com/articles/s41598-017-04426-w).
 
+
 The following sankey plot is the projection snRNA-Seq to scRNA-Seq.
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/snRNA-Seq2scRNA-Seq.png)
+
 
 
 #### Projection bulk RNA-Seq to scRNA-Seq.
