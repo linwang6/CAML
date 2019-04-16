@@ -19,11 +19,12 @@ for line in f2:
     line=line.strip()
     lineE=line.split()
     if '"' in lineE[1]:
-        print >>f3,line+'       '+'"Types"'
+        print >>output,line+'   '+'"Types"'
     if '"' not in h[1]:
-        print >>f3,line+'       '+t[lineE[0]]
+        print >>output,line+'   '+t[lineE[0]]
 
 input1.close()
 input2.close()
 output.close()
+
 
