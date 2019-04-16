@@ -95,9 +95,35 @@ When the files are ready, then we can run the Classification subprogram,
 Please note that the parameter -g for the feature selection, setting the '-g 50' should work well for most of the cases (Please see our paper). Please note that when you want to classify more than 10 different classes or more, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. And the optional parameter -s, we suggest you include it when there are closely cell subtypes, for example CD4 and CD8 cell types.
 
 
-The output file contains all the information including the cell/sample ID, the predicted class probabilities and predicted cell/sample types, here we show two examples, one is for single cell classification and another one is for bulk RNA-seq data (ivy GAP, [Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
+The output file contains all the information including the cell/sample ID, the predicted class probabilities and predicted cell/sample types, here we show two examples, one is for single cell classification (PBMC dataset was available [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets)) and another one is for bulk RNA-seq data ([ivy GAP, Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
 
 
+#### scRNA-Seq (PBMC dataset)   
+
+Output file:
+    
+    Cell_ID Probability_of_CD34   Probability_of_B  Probability_of_CD4    Probability_of_CD8  Probability_of_DC    Probability_of_Monocytes    Probability_of_NK   Predicted_types
+    "AAACCTGAGCTAACTC"      0.00037265905209929966  0.00019461235341044442  0.018780001757902304    0.0069075896125628325   0.002850644369198496    0.9516413165740238      0.01925317628080269     Monocytes       
+    "AAACCTGAGCTAGTGG"      0.00023363917579888161  0.0002758384408950353   0.9170060548204749      0.07060034544087794     0.0005234122503909771   0.0010333612928155509   0.010327348578746714    CD4
+    "AAACCTGTCTACCAGA"      0.0001331752815381497   0.0003692780495988838   0.2049931328836318      0.785481988392962       0.0006134695859992477   0.0024904196761684158   0.005918536130101295    CD8     
+    "AAACCTGTCTGCGGCA"      0.0011942266787620323   0.006175772485781797    0.0070025049357011395   0.9803464785767921      0.0013936372872175604   0.0006816808625693592   0.00320569917317607     CD8     
+    "AAACGGGCAGTAAGAT"      0.9700732379485719      0.0008380287152539023   0.0008924723753801042   0.013193123791861163    0.0036978727367686544   0.005918092489852546    0.005387171942311561    B       
+    "AAACGGGGTACAGTTC"      0.00495654893338553     0.05811010482321016     0.045442150300020905    0.38851522558955265     0.01334805425287245     0.013542117897749199    0.47608579820320923     NK      
+    "AGTGAGGCACAGGTTT"	0.02612355295139755	0.6591159513286947	0.05461515122492262	0.06661120030271617	0.15399315778783473	0.007438692657104565	0.032102293747329654	CD34	
+    "ACACCCTCACGCCAGT"      0.01002801133138485     0.013450302818802504    0.0033840503479810285   0.004874948704661606    0.8704569593427326      0.08031400874446516     0.017491718709972397    DC      
+    "ACACCCTCATGCCTAA"      0.007684983027881935    0.03605432535601024     0.6642055706181322      0.26008323999520694     0.008766747625962046    0.004490175653011966    0.01871495772379467     CD4     
+
+
+
+
+The tSNE plot of predicted samples types and the anatomic structure annotation types
+![alt text](https://github.com/linwang6/CAML/blob/master/inst/PBMC_tSNE.png)
+
+
+
+#### Bulk RNA-Seq (ivy GAP)
+
+Output file:
     
     Cell_ID Probability_of_Cellular_Tumor   Probability_Infiltrating_Tumor   Probability_Leading_Edge Probability_Microvascular_proliferation    Probability_Pseudopalisading_cells Predicted_types
     "304950296"     2.6800024884849247e-14  1.8189894035424017e-12  2.6800024884849247e-14  0.9999999999981006      2.6800024884849247e-14  Microvascular_proliferation 
