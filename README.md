@@ -1,6 +1,8 @@
 # CAML/ELSA?
 ### **E**nsemble **L**earning for classifying **S**ingle-cell data and projection across reference **A**tlases
 
+Single-cell atlases are being assembled at an accelerating pace. How best to project data across single-cell atlases is an open problem. We developed a boosted learner that overcomes the greatest challenge with status quo classifiers: low sensitivity, especially when dealing with rare cell types.
+
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/CAML.jpg)
 
