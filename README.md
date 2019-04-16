@@ -231,11 +231,11 @@ Our manuscript is available on [here]().
 
 ## References
 
-Seiffert, C., Khoshgoftaar, T., Hulse, J. & Napolitano, A. RUSBoost: Improving clasification performance when training data is skewed. in 19th International Conference on Pattern Recognition 1–4 (2008).
-Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass confusion matrix library in Python. Journal of Open Source Software, 3(25), p.729.
-Baron, M. et al. A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Interand Intra-cell Population Structure. Cell Syst 3, 346–360.e4 (2016).
-Segerstolpe, Å. et al. Single-Cell Transcriptome Profiling of Human Pancreatic Islets in Health and Type 2 Diabetes. Cell Metab. 24, 593–607 (2016).
-Puchalski RB, Shah N, Miller J, Dalley R, Nomura SR, Yoon JG, Smith KA, Lankerovich M, Bertagnolli D, Bickley K, Boe AF, Brouner K, Butler S, Caldejon S, Chapin M, Datta S, Dee N, Desta T, Dolbeare T, Dotson N, Ebbert A, Feng D, Feng X, Fisher M, Gee G, Goldy J, Gorley L, Gregor BW, Gu G, Hejazinia N, Hohmann J, Hothi P, Howard R, Joines K, Kriedberg A, Kuan L, Lau C, Lee F, Lee H, Lemon T, Long F, Mastan N, Mott E, Murthy C, Ngo K, Olson E, Reding M, Riley Z, Rosen D, Sandman D, Shapovalova N, Slaughterbeck CR, Sodt A, Stockdale G, Szafer A, Wakeman W, Wohnoutka PE, White SJ, Marsh D, Rostomily RC, Lydia Ng L, Dang C, Jones AJ, Keogh B, Gittleman HR, Barnholtz-Sloan JS, Cimino PJ, Uppin MS, Keene CD, Farrokhi FR, Lathia JD, Berens ME, Iavarone I, Bernard A, Lein E, Phillips JW, Rostad SW, Cobbs C, Hawrylycz MJ, and Foltz GD. An anatomic transcriptional atlas of human glioblastoma.Science360, 660-663 (2018).
+1. Seiffert, C., Khoshgoftaar, T., Hulse, J. & Napolitano, A. RUSBoost: Improving clasification performance when training data is skewed. in 19th International Conference on Pattern Recognition 1–4 (2008).
+2. Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass confusion matrix library in Python. Journal of Open Source Software, 3(25), p.729.
+3. Baron, M. et al. A Single-Cell Transcriptomic Map of the Human and Mouse Pancreas Reveals Interand Intra-cell Population Structure. Cell Syst 3, 346–360.e4 (2016).
+4. Segerstolpe, Å. et al. Single-Cell Transcriptome Profiling of Human Pancreatic Islets in Health and Type 2 Diabetes. Cell Metab. 24, 593–607 (2016).
+5. Puchalski RB, Shah N, Miller J, Dalley R, Nomura SR, Yoon JG, Smith KA, Lankerovich M, Bertagnolli D, Bickley K, Boe AF, Brouner K, Butler S, Caldejon S, Chapin M, Datta S, Dee N, Desta T, Dolbeare T, Dotson N, Ebbert A, Feng D, Feng X, Fisher M, Gee G, Goldy J, Gorley L, Gregor BW, Gu G, Hejazinia N, Hohmann J, Hothi P, Howard R, Joines K, Kriedberg A, Kuan L, Lau C, Lee F, Lee H, Lemon T, Long F, Mastan N, Mott E, Murthy C, Ngo K, Olson E, Reding M, Riley Z, Rosen D, Sandman D, Shapovalova N, Slaughterbeck CR, Sodt A, Stockdale G, Szafer A, Wakeman W, Wohnoutka PE, White SJ, Marsh D, Rostomily RC, Lydia Ng L, Dang C, Jones AJ, Keogh B, Gittleman HR, Barnholtz-Sloan JS, Cimino PJ, Uppin MS, Keene CD, Farrokhi FR, Lathia JD, Berens ME, Iavarone I, Bernard A, Lein E, Phillips JW, Rostad SW, Cobbs C, Hawrylycz MJ, and Foltz GD. An anatomic transcriptional atlas of human glioblastoma.Science360, 660-663 (2018).
 
 
 
