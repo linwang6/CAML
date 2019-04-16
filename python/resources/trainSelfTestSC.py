@@ -96,9 +96,8 @@ for line in markFile:
                 remDup[term[0]]=lineE[0]+' '+'%f'%term[1]
 
 for finalIterm in remDup:
-    print >>predD,finalIterm,remDup[finalIterm]
+    print >>predD,remDup[finalIterm],finalIterm,remDup[finalIterm]
 
 
 markFile.close()
 predD.close()
-
