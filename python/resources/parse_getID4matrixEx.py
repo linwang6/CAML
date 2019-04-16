@@ -17,13 +17,11 @@
 #'
 #'
 #'
+#!/usr/bin/python
 #' Requiements:
-#' 1. Istall R, version 3.4 or greater
-#' 2. Python 2.7 or greater
-#' 3. Packages:
-#'    'Open R'
-#'    install.packages("Seurat")
-#'    library(Seurat)
+#' 
+#' 1. Python 2.7 or greater
+#' 2. Packages:
 #'    'Python'
 #'    numpy (>=1.8.2)
 #'    scipy (>=0.13.3)
@@ -34,7 +32,11 @@
 #'    pip install -U scikit-learn
 #'    pip install -U imbalanced-learn
 #'    pip install -U sklearn
+#'
 #' Please cite our paper if our paper or code helped you.
+#'
+
+###################################
 
 import os
 import re
