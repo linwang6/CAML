@@ -49,7 +49,7 @@ arguments:
 
 ###################################
 if len(sys.argv) == 7:
-    caml='/usr/local/bin/python2.7 '+'/Users/wanglin/cell_classifier/garnett-master/caml/python/pp_giyhub/caml.py '+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]
+    caml='/usr/local/bin/python2.7 '+'../resources/caml.py '+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]
     os.system(caml)
 
 ###################################
