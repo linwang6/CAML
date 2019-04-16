@@ -94,7 +94,7 @@ When the files are ready, then we can run the Classification subprogram,
 Please note that the parameter -g for the feature selection, setting the '-g 50' should work well for most of the cases (Please see our paper). Please note that when you want to classify more than 10 different classes or more, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. And the optional parameter -s, we suggest you include it when there are closely cell subtypes, for example CD4 and CD8 cell types.
 
 
-The output file contains all the information including the cell/sample ID, the predicted class probabilities and predicted cell/sample types, here we show two examples, one is for single cell classification (PBMC dataset was available [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets)) and another one is for bulk RNA-seq data ([ivy GAP, Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
+The output file contains all the information including the cell/sample ID, the predicted class probabilities and predicted cell/sample types, here we show two examples, one is for single cell classification (PBMC dataset was available [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets)) and another one dataset is for bulk RNA-seq data ([ivy GAP, Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
 
 
 #### scRNA-Seq (PBMC dataset)   
@@ -154,9 +154,32 @@ The tSNE plot of predicted samples types and the anatomic structure annotation t
 
 ### Projection of single-cell/single-nuc/bulk RNA-Seq data 
     
-    /usr/local/bin/python2.7 /Users/wanglin/cell_classifier/garnett-master/caml/python/python/caml_classity_project.py projection scell -t SF11644T_SF11956T_SF11977T_SF11979T_PCA_PC16_new5_scale.data_share_tr -p 2018-03-29_Ivy_GAP_pheno_1_sortByAnn_Ex_head_tr_share_tr -c 2018-03-29_Ivy_GAP_pheno_1_sortByAnn_2_1_addHGG -g 10 -o Ivy_GAP2HGG_g10.2
+    python caml.py projection scell -t reference_expression_matrix -p projection_expression_matrix -c reference_cell_types -g 50 -o projection_to_reference_output
     
-    
+#### Projection across of different scRNA-Seq platforms
+
+Projection of the Smart-seq2 platform (human pancreas data sets, [Segerstolpe et al](https://www.sciencedirect.com/science/article/pii/S1550413116304363?via%3Dihub).) to inDrop platform ([Baron et al](https://www.sciencedirect.com/science/article/pii/S2405471216302666?via%3Dihub).)
+
+The tSNE plot of reference cell types (left) and projection cell types (right)
+![alt text](https://github.com/linwang6/CAML/blob/master/inst/Pancreas_tSNE.png)
+
+The following sankey plot of the reference cell types and projection cell types
+![alt text](https://github.com/linwang6/CAML/blob/master/inst/Pancreas_sankey.png)
+
+
+#### Projection snRNA-Seq to scRNA-Seq.
+
+The snRNA-Seq data (from cortex) and scRNA-Seq data was available [here](https://www.nature.com/articles/s41598-017-04426-w).
+
+The following sankey plot is the projection snRNA-Seq to scRNA-Seq.
+![alt text](https://github.com/linwang6/CAML/blob/master/inst/snRNA-Seq2scRNA-Seq.png)
+
+
+#### Projection bulk RNA-Seq to scRNA-Seq.
+
+
+
+
 ## Contact
 
 Lin Wang Lin.Wang2@ucsf.edu
