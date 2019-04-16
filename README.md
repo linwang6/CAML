@@ -38,13 +38,12 @@
     Please simply typing command: python caml.py
     It gives you help information for caml,
     $ python caml.py
-    Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-c] [-g] [-o] [-s]
+    Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-g] [-o] [-s]
            python caml.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
 
     classification arguments:
      -m, --cell_marker       	   list for cell marker
      -i, --input_file        	   input data for classification
-     -c, --cell_type         	   cell type list
      -g, --geneNum             	   number of top importances
      -o, --output            	   output file for cell types
      -s, --specify (optional)          specific cell type for extend, for example -s CD4:CD8
@@ -112,16 +111,19 @@ Output file:
     "AGTGAGGCACAGGTTT"	0.02612355295139755	0.6591159513286947	0.05461515122492262	0.06661120030271617	0.15399315778783473	0.007438692657104565	0.032102293747329654	CD34	
     "ACACCCTCACGCCAGT"      0.01002801133138485     0.013450302818802504    0.0033840503479810285   0.004874948704661606    0.8704569593427326      0.08031400874446516     0.017491718709972397    DC      
     "ACACCCTCATGCCTAA"      0.007684983027881935    0.03605432535601024     0.6642055706181322      0.26008323999520694     0.008766747625962046    0.004490175653011966    0.01871495772379467     CD4     
+    "ACGATACAGCTACCTA"      0.004612004038623754    0.0012087032246744483   0.00226395749582816     0.009699679746039132    0.24396917832147094     0.7118817116671998      0.02636476550616375     Monocytes       
+    "ACGATACAGCTCTCGG"      0.7683682467453246      0.04978819822557202     0.018926906070520316    0.0969378244574078      0.024458850103481297    0.008219664615566556    0.03330030978212728     B       
 
 
 
 
-The tSNE plot of predicted samples types and the anatomic structure annotation types
+
+The tSNE plot of gene markers based cell types (left) and predicted samples types (right)
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/PBMC_tSNE.png)
 
 
 
-#### Bulk RNA-Seq (ivy GAP)
+#### Bulk RNA-Seq ([ivy GAP](http://glioblastoma.alleninstitute.org/))
 
 Output file:
     
