@@ -104,7 +104,7 @@ Please note that the parameter -g for the feature selection, setting the '-g 50'
 The output file contains all the information including the cell/sample ID, the predicted class probabilities and predicted cell/sample types, here we show two examples, one is for single cell classification (PBMC dataset was available [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets)) and another one dataset is for bulk RNA-seq data ([ivy GAP, Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
 
 
-#### scRNA-Seq (PBMC dataset)
+#### scRNA-Seq Classification (PBMC dataset)
 
 Firstly, we applied the tool to PBMC data set, which has seven different cell types including CD4, CD8, DC, NK, B, CD34 and Monocyte type. For this type of dataset (when you want to classify one type cell into different subtypes, for example, classifying T cell into CD4 and CD8 T cell), we highly recommend add the parameter '-s CD4:CD8', which gives more accurate classification results.
 
@@ -132,7 +132,7 @@ The tSNE plot of gene markers based cell types (left) and predicted samples type
 
 
 
-#### Bulk RNA-Seq ([ivy GAP](http://glioblastoma.alleninstitute.org/))
+#### Bulk RNA-Seq Classification ([ivy GAP](http://glioblastoma.alleninstitute.org/))
 
 Our tool also can be used for bulk RNA-Seq samples types calssification, here we show the classification of the ivyGAP data, which has detailed anatomic structure annotation types.
 
@@ -185,7 +185,7 @@ The following sankey plot of the cell types of reference and projection
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/Pancreas_sankey.png)
 
 
-#### Projection snRNA-Seq to scRNA-Seq.
+#### Projection of snRNA-Seq to scRNA-Seq.
 
 The snRNA-Seq data (from cortex, Lake et al) and scRNA-Seq data (Lake et al) was available [here](https://www.nature.com/articles/s41598-017-04426-w).
 
@@ -195,7 +195,7 @@ The following sankey plot is the projection of snRNA-Seq to scRNA-Seq.
 
 
 
-#### Projection bulk RNA-Seq to scRNA-Seq.
+#### Projection of bulk RNA-Seq to scRNA-Seq.
 
 
 The following sankey plot is the projection of bulk RNA-Seq data ([ivy GAP](http://glioblastoma.alleninstitute.org/)) to scRNA-Seq ([our novel GBM scRNA-Seq data]()).
