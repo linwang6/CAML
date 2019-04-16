@@ -9,7 +9,7 @@
 #### [Tutorial](https://github.com/linwang6/CAML#Tutorial)
 #### [Contact](https://github.com/linwang6/CAML#Contact)
 #### [Copyright and License Information](https://github.com/linwang6/CAML#Copyright-and-License-Information)
-
+#### [Citation](https://github.com/linwang6/CAML#Citation)
 
 ## Installation
     Requiements:
@@ -187,6 +187,9 @@ The following sankey plot is the projection snRNA-Seq to scRNA-Seq.
 #### Projection bulk RNA-Seq to scRNA-Seq.
 
 
+The following sankey plot is the projection bulk RNA-Seq data ([ivy GAP](http://glioblastoma.alleninstitute.org/)) to scRNA-Seq ([our GBM scRNA-Seq data]).
+![alt text](https://github.com/linwang6/CAML/blob/master/inst/ivyGAP2GBM.png)
+
 
 
 ## Contact
@@ -202,6 +205,20 @@ https://github.com/diazlab
 https://diazlab.ucsf.edu/
     
     
+
 ## Copyright and License Information
+
+GNU GENERAL PUBLIC LICENSE
+
+Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone is permitted to copy and distribute verbatim copies  of this license document, but changing it is not allowed.
+
+
+## Citation
+
+Please cite our paper if our paper or code helped you.
+
+
+
+
 
 
