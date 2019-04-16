@@ -1,8 +1,6 @@
 #' Please cite our paper if our paper or code helped you.
 #' 
-#' @example
-#' python2.7, /usr/local/bin/python2.7 caml_test.py
-#' python 3.6,  python caml_test.py 
+
 
 ###################################
 
