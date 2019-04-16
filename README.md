@@ -1,7 +1,9 @@
 # CAML/ELSA?
 ### **E**nsemble **L**earning for classifying **S**ingle-cell data and projection across reference **A**tlases
 
+
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/CAML.jpg)
+
 
 
 ## Contents
@@ -10,6 +12,9 @@
 #### [Contact](https://github.com/linwang6/CAML#Contact)
 #### [Copyright and License Information](https://github.com/linwang6/CAML#Copyright-and-License-Information)
 #### [Citation](https://github.com/linwang6/CAML#Citation)
+#### [References](https://github.com/linwang6/CAML#References)
+
+
 
 ## Installation
     Requiements:
@@ -176,7 +181,7 @@ The following sankey plot of the reference cell types and projection cell types
 
 #### Projection snRNA-Seq to scRNA-Seq.
 
-The snRNA-Seq data (from cortex) and scRNA-Seq data was available [here](https://www.nature.com/articles/s41598-017-04426-w).
+The snRNA-Seq data (from cortex, Lake et al) and scRNA-Seq data (Lake et al) was available [here](https://www.nature.com/articles/s41598-017-04426-w).
 
 
 The following sankey plot is the projection snRNA-Seq to scRNA-Seq.
@@ -224,5 +229,5 @@ Please cite our paper if our paper or code helped you.
 Our manuscript is available on [here]().
 
 
-
+## References
 
