@@ -128,6 +128,7 @@ The following is part of the output file:
 
 
 The tSNE plot of gene markers based cell types (left) and predicted samples types (right)
+
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/PBMC_tSNE.png)
 
 
@@ -158,11 +159,13 @@ The following is part of output file:
 
 
 The following sankey plot of the predicted samples types compared to the anatomic structure annotation types  (http://glioblastoma.alleninstitute.org/).
+
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_sankey.png)
 
 
 
 The tSNE plot of predicted samples types and the anatomic structure annotation types
+
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_tSNE.png)
 
 
@@ -191,6 +194,7 @@ The snRNA-Seq data (from cortex, Lake et al) and scRNA-Seq data (Lake et al) was
 
 
 The following sankey plot is the projection of snRNA-Seq to scRNA-Seq.
+
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/snRNA-Seq2scRNA-Seq.png)
 
 
