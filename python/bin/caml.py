@@ -43,16 +43,15 @@ from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import train_test_split
 from pycm import *
 
-if len(sys.argv) < 12:
+if len(sys.argv) < 11:
     print """
 
-Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-c] [-g] [-o] [-s]
+Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-g] [-o] [-s]
        python caml.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
 
 classification arguments:
   -m, --cell_marker       	list for cell marker
   -i, --input_file        	input data for classification
-  -c, --cell_type         	cell type list
   -g, --geneNum           	number of top importances
   -o, --output            	output file for cell types
   -s, --specify (optional)      specific cell type for extend, for example -s CD4:CD8
@@ -71,6 +70,24 @@ projection arguments:
 
 #Run classification job
 
+if len(sys.argv) == 11:
+  if 'classification' in sys.argv[1]:
+    if 'scell' in sys.argv[2] or 'snuc' in sys.argv[2]:
+      trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestSC.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
+      os.system(trainSelectList)
+      trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
+      os.system(trainSelectEx)
+      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]
+      os.system(caml)
+
+    if 'bulk' in sys.argv[2]:
+      trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestBulk.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
+      os.system(trainSelectList)
+      trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
+      os.system(trainSelectEx)
+      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]
+      os.system(caml)
+
 if len(sys.argv) == 13:
   if 'classification' in sys.argv[1]:
     if 'scell' in sys.argv[2] or 'snuc' in sys.argv[2]:
@@ -78,7 +95,7 @@ if len(sys.argv) == 13:
       os.system(trainSelectList)
       trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
       os.system(trainSelectEx)
-      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]
+      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]+' -s '+'%s'%sys.argv[12]
       os.system(caml)
 
     if 'bulk' in sys.argv[2]:
@@ -86,25 +103,7 @@ if len(sys.argv) == 13:
       os.system(trainSelectList)
       trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
       os.system(trainSelectEx)
-      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]
-      os.system(caml)
-
-if len(sys.argv) == 15:
-  if 'classification' in sys.argv[1]:
-    if 'scell' in sys.argv[2] or 'snuc' in sys.argv[2]:
-      trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestBulk.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
-      os.system(trainSelectList)
-      trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
-      os.system(trainSelectEx)
-      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]+' -s '+'%s'%sys.argv[14]
-      os.system(caml)
-
-    if 'bulk' in sys.argv[2]:
-      trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestBulk.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
-      os.system(trainSelectList)
-      trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
-      os.system(trainSelectEx)
-      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]+' -s '+'%s'%sys.argv[14]
+      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]+' -s '+'%s'%sys.argv[12]
       os.system(caml)    
 
 
@@ -116,16 +115,17 @@ if len(sys.argv) == 15:
 if len(sys.argv) == 13:
   if 'projection' in sys.argv[1]:
     caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]
-    print caml
+    #print caml
     os.system(caml)
 if len(sys.argv) == 15:
   if 'projection' in sys.argv[1]:
     caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]+' -s '+'%s'%sys.argv[14]
-    print caml
+    #print caml
     os.system(caml)
 
 
 ###################################
+
 
 
 
