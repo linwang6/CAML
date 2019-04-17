@@ -96,7 +96,7 @@ And the format of the cell markers file should be like this:
 
 When the files are ready, then we can run the Classification subprogram, 
     
-    python caml.py classification -m markers.list -i gene_exxpression_data -g 50 -o classification_output -s subtypes extension (optional)
+    python caml.py classification scell -m markers.list -i gene_exxpression_data -g 50 -o classification_output -s subtypes extension (optional)
 
 Please note that the parameter -g for the feature selection, setting the '-g 50' should work well for most of the cases (Please see our paper). Please note that when you want to classify more than 10 different classes or more, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. And the optional parameter -s, we suggest you include it when there are closely cell subtypes, for example CD4 and CD8 cell types.
 
