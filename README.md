@@ -127,7 +127,7 @@ The following is part of the output file:
 
 
 
-The tSNE plot of gene markers based cell types (left) and predicted samples types (right)
+The tSNE plot of gene markers based cell types (left) and predicted cell types (right)
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/PBMC_tSNE.png)
 
