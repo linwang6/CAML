@@ -208,7 +208,7 @@ The following sankey plot is the projection of bulk RNA-Seq data ([ivy GAP](http
 
 (CT: Cellular Tumor IT: Infiltrating Tumor MVP: Microvascular proliferation LE: Leading Edge PAN: Pseudopalisading cells)
 
-We found that mGSCs are enriched in hypoxic regions, while the PGSCs are enriched in the tumor’s leading edge.
+We found that mGSCs are enriched in hypoxic regions, while the pGSCs are enriched in the tumor’s leading edge.
 
 
 ## Contact
