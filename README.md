@@ -42,11 +42,11 @@ Single-cell atlases are being assembled at an accelerating pace. How best to pro
      
      
 ## Tutorial
-    Please simply typing command: python caml.py
-    It gives you help information for caml,
-    $ python caml.py
-    Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-g] [-o] [-s]
-           python caml.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
+    Please simply typing command: python elsa.py
+    It gives you help information for elsa,
+    $ python elsa.py
+    Usage: python elsa.py classification scell/snuc/bulk [-m] [-i] [-g] [-o] [-s]
+           python elsa.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
 
     classification arguments:
      -m, --cell_marker       	   list for cell marker
@@ -172,7 +172,7 @@ The tSNE plot of predicted samples types and the anatomic structure annotation t
 
 ### Projection of single-cell/single-nuc/bulk RNA-Seq data 
     
-    python caml.py projection scell -t reference_expression_matrix -p projection_expression_matrix -c reference_cell_types -g 50 -o projection_to_reference_output
+    python elsa.py projection scell -t reference_expression_matrix -p projection_expression_matrix -c reference_cell_types -g 50 -o projection_to_reference_output
     
 #### Projection of different scRNA-Seq platforms
 
