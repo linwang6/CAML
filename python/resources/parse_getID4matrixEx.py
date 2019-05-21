@@ -1,4 +1,4 @@
-#' CAML: Cell type Auto classification of scRNA-Seq or snRNA-Seq via Machine Learning
+#' ELSA: Cell type Auto classification of scRNA-Seq or snRNA-Seq via Machine Learning
 #'
 #' Single-cell RNA sequencing (scRNA-seq), a powerful research tool, enables rapid determination of
 #' the precise gene expression patterns of tens of thousands of individual cells and has broad
@@ -8,8 +8,8 @@
 #' there is less than 1% T cell in brain tumor), b. lower number of detected genes of snRNA-Seq
 #' (compatibility with frozen samples), which is also labor intensive and tends to generate biased annotation.
 #' Overall, there is lack of one high accurency auto annotation tool for scRNA-Seq or snRNA-Seq in the single cell sequencing era.
-#' Here, we present one novel high accurency auto annotation method (CAML) for scRNA-Seq or snRNA-Seq, especially for
-#' the imbalanced single cell data. CAML integrates the RUSBoost algorithm, which can alleviate the problem of
+#' Here, we present one novel high accurency auto annotation method (ELSA) for scRNA-Seq or snRNA-Seq, especially for
+#' the imbalanced single cell data. ELSA integrates the RUSBoost algorithm, which can alleviate the problem of
 #' class imbalance by combining data sampling and boosting, improving classification performance when training data is imbalanced.
 #'
 #'
