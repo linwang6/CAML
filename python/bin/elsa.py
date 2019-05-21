@@ -17,7 +17,7 @@
 #' Please cite our paper if our paper or code helped you.
 #' 
 #' @example
-#' python2.7, /usr/local/bin/python2.7 caml.py parameters
+#' python2.7, /usr/local/bin/python2.7 elsa.py parameters
 
 ###################################
 
@@ -46,8 +46,8 @@ from pycm import *
 if len(sys.argv) < 11:
     print """
 
-Usage: python caml.py classification scell/snuc/bulk [-m] [-i] [-g] [-o] [-s]
-       python caml.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
+Usage: python elsa.py classification scell/snuc/bulk [-m] [-i] [-g] [-o] [-s]
+       python elsa.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
 
 classification arguments:
   -m, --cell_marker       	list for cell marker
@@ -77,16 +77,16 @@ if len(sys.argv) == 11:
       os.system(trainSelectList)
       trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
       os.system(trainSelectEx)
-      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]
-      os.system(caml)
+      elsa='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]
+      os.system(elsa)
 
     if 'bulk' in sys.argv[2]:
       trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestBulk.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
       os.system(trainSelectList)
       trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
       os.system(trainSelectEx)
-      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]
-      os.system(caml)
+      elsa='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]
+      os.system(elsa)
 
 if len(sys.argv) == 13:
   if 'classification' in sys.argv[1]:
@@ -95,16 +95,16 @@ if len(sys.argv) == 13:
       os.system(trainSelectList)
       trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
       os.system(trainSelectEx)
-      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]+' -s '+'%s'%sys.argv[12]
-      os.system(caml)
+      elsa='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]+' -s '+'%s'%sys.argv[12]
+      os.system(elsa)
 
     if 'bulk' in sys.argv[2]:
       trainSelectList='/usr/local/bin/python2.7 ../resources/trainSelfTestBulk.py '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_trainList'
       os.system(trainSelectList)
       trainSelectEx='/usr/local/bin/python2.7 ../resources/getCell.py '+'%s'%sys.argv[6]+'_trainList '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[6]+'_train'+' '+'%s'%sys.argv[6]+'_test'
       os.system(trainSelectEx)
-      caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]+' -s '+'%s'%sys.argv[12]
-      os.system(caml)    
+      elsa='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[6]+'_train'+' -p '+'%s'%sys.argv[6]+'_test'+' -c '+'%s'%sys.argv[6]+'_trainList'+' -g '+'%s'%sys.argv[8]+' -o '+'%s'%sys.argv[10]+' -s '+'%s'%sys.argv[12]
+      os.system(elsa)    
 
 
 ###################################
@@ -114,14 +114,14 @@ if len(sys.argv) == 13:
 
 if len(sys.argv) == 13:
   if 'projection' in sys.argv[1]:
-    caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]
+    elsa='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]
     #print caml
-    os.system(caml)
+    os.system(elsa)
 if len(sys.argv) == 15:
   if 'projection' in sys.argv[1]:
-    caml='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]+' -s '+'%s'%sys.argv[14]
+    elsa='/usr/local/bin/python2.7 ../resources/caml_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]+' -s '+'%s'%sys.argv[14]
     #print caml
-    os.system(caml)
+    os.system(elsa)
 
 
 ###################################
