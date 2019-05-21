@@ -58,7 +58,7 @@ for line in normTrEx1:
     line=line.strip()
     lineE=line.split()
     a=0
-    if '"CCND1' in line:
+    if '"' in lineE[1]:
         for n in range(0,int(len(lineE))):
                 a=a+1
                 if lineE[n] in mkls:
@@ -72,14 +72,14 @@ exp=''
 for line in normTrEx2:
     line=line.strip()
     lineE=line.split()
-    if '"CCND1' in line:
+    if '"' in lineE[1]:
         for id in range(0,int(len(lineE))):
             if lineE[id] in mkls.keys():
                 cellID=cellID+lineE[id]+'       '
         print >>trainD,cellID+' '+'"Cell_types"'
         cellID
 
-    if '"CCND1' not in line:
+    if '"' not in lineE[1]:
         
         for value in nte:
             #print value,len(lineE)
