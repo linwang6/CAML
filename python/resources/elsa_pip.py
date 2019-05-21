@@ -1,4 +1,4 @@
-#' CAML: Cell type Auto classification of scRNA-Seq or snRNA-Seq via Machine Learning
+#' ELSA: Cell type Auto classification of scRNA-Seq or snRNA-Seq via Machine Learning
 #' 
 #' Single-cell RNA sequencing (scRNA-seq), a powerful research tool, enables rapid determination of 
 #' the precise gene expression patterns of tens of thousands of individual cells and has broad 
@@ -8,8 +8,8 @@
 #' there is less than 1% T cell in brain tumor), b. lower number of detected genes of snRNA-Seq 
 #' (compatibility with frozen samples), which is also labor intensive and tends to generate biased annotation.
 #' Overall, there is lack of one high accurency auto annotation tool for scRNA-Seq or snRNA-Seq in the single cell sequencing era.
-#' Here, we present one novel high accurency auto annotation method (CAML) for scRNA-Seq or snRNA-Seq, especially for 
-#' the imbalanced single cell data. CAML integrates the RUSBoost algorithm, which can alleviate the problem of 
+#' Here, we present one novel high accurency auto annotation method (ELSA) for scRNA-Seq or snRNA-Seq, especially for 
+#' the imbalanced single cell data. ELSA integrates the RUSBoost algorithm, which can alleviate the problem of 
 #' class imbalance by combining data sampling and boosting, improving classification performance when training data is imbalanced.
 #'
 #'
@@ -63,7 +63,7 @@ from pycm import *
 if len(sys.argv) < 11:
     print """
 
-Usage: caml_v1.py [-t] [-p] [-c] [-g] [-o] [-s]
+Usage: elsa_v1.py [-t] [-p] [-c] [-g] [-o] [-s]
 
 arguments:
   -t, --traning           traning prep data
@@ -93,8 +93,8 @@ if len(sys.argv) == 11:
 	os.system(trainType)
 	#predType='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'
 	#os.system(predType)
-	caml='/usr/local/bin/python2.7 ../resources/run_caml.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' -o '+'%s'%sys.argv[10]
-	os.system(caml)
+	elsa='/usr/local/bin/python2.7 ../resources/run_elsa.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' -o '+'%s'%sys.argv[10]
+	os.system(elsa)
 
 
 ###################################
@@ -115,8 +115,8 @@ if len(sys.argv) == 13:
         os.system(trainType)
         #predType='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' '+'%s'%sys.argv[4]+'_featureImportanceTopPredType'
         #os.system(predType)
-        caml='/usr/local/bin/python2.7 ../resources/run_caml.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' -o '+'%s'%sys.argv[10]
-        os.system(caml)
+        elsa='/usr/local/bin/python2.7 ../resources/run_elsa.py -t '+'%s'%sys.argv[2]+'_featureImportanceTopTrainType'+' -p '+'%s'%sys.argv[4]+'_featureImportanceTopPred'+' -o '+'%s'%sys.argv[10]
+        os.system(elsa)
 	subCell1='/usr/local/bin/python2.7 ../resources/extractTrainCell.py '+'%s'%sys.argv[2]+'_addType'+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[12]+' '+'%s'%sys.argv[2]+'_sub'+' '+'%s'%sys.argv[10]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[4]+'_sub'
 	#print subCell1
 	os.system(subCell1)
@@ -136,10 +136,10 @@ if len(sys.argv) == 13:
         os.system(trainTypeSub)
         #predTypeSub='/usr/local/bin/python2.7 ../resources/addType.py '+'%s'%sys.argv[6]+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'+' '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10PredType'
         #os.system(predTypeSub)
-	camlSub='/usr/local/bin/python2.7 ../resources/run_caml.py -t '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10TrainType'+' -p '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'+' -o '+'%s'%sys.argv[10]+'subType'
-        os.system(camlSub)
-	camlMerg='/usr/local/bin/python2.7 ../resources/confusionMatrix.py '+'%s'%sys.argv[10]+' '+'%s'%sys.argv[10]+'subType'+' '+'%s'%sys.argv[10]+'MergeType'
-        os.system(camlMerg)
+	elsaSub='/usr/local/bin/python2.7 ../resources/run_elsa.py -t '+'%s'%sys.argv[2]+'_subType_featureImportanceTop10TrainType'+' -p '+'%s'%sys.argv[4]+'_subType_featureImportanceTop10Pred'+' -o '+'%s'%sys.argv[10]+'subType'
+        os.system(elsaSub)
+	elsaMerg='/usr/local/bin/python2.7 ../resources/confusionMatrix.py '+'%s'%sys.argv[10]+' '+'%s'%sys.argv[10]+'subType'+' '+'%s'%sys.argv[10]+'MergeType'
+        os.system(elsaMerg)
 	
 	
 	
