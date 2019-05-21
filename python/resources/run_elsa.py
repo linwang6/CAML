@@ -44,8 +44,8 @@ arguments:
 
 ###################################
 if len(sys.argv) == 7:
-    caml='/usr/local/bin/python2.7 '+'../resources/caml.py '+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]
-    os.system(caml)
+    elsa='/usr/local/bin/python2.7 '+'../resources/elsa.py '+' '+'%s'%sys.argv[2]+' '+'%s'%sys.argv[4]+' '+'%s'%sys.argv[6]
+    os.system(elsa)
 
 ###################################
 
