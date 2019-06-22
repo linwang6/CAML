@@ -53,7 +53,7 @@ Single-cell atlases are being assembled at an accelerating pace. How best to pro
      -i, --input_file        	   input data for classification
      -g, --geneNum             	   number of top importances
      -o, --output            	   output file for cell types
-     -s, --specify (optional)          specific cell type for extend, for example -s CD4:CD8
+     -s, --specify (optional)          second cluster-extended classification, for example -s CD4:CD8
 
     projection arguments:
      -t, --traning           	   traning prep data
@@ -61,7 +61,7 @@ Single-cell atlases are being assembled at an accelerating pace. How best to pro
      -c, --cell_type         	   cell type list
      -g, --geneNum           	   number of top importances
      -o, --output            	   output file for cell types
-     -s, --specify (optional)          specific cell type for extend, for example -s CD4:CD8
+     -s, --specify (optional)          second cluster-extended classification, for example -s CD4:CD8
      
 
 ### Classification of single-cell/single-nuc/bulk RNA-Seq data
