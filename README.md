@@ -28,40 +28,36 @@ Single-cell atlases are being assembled at an accelerating pace. How best to pro
        pycm
        imbalanced-learn (0.4)
       
-    How to install packages (Taking imbalanced-learn as example)?
-    1. Imbalanced-learn is currently available on the PyPi’s reporitories and you can install it via pip. 
-       It's easy to install packages using pip.
-       For example, typing command: pip install -U imbalanced-learn to install 
-       'imbalanced-learn' package.
-    2. The package is release also in Anaconda Cloud platform.
-       For example, typing command: conda install -c conda-forge imbalanced-learn to install 
-       'imbalanced-learn' package.
-    3. Or install using pip and GitHub.
-       For example, typing command: pip install -U git+https://github.com/scikit-learn-contrib/imbalanced-learn.git 
-       to install 'imbalanced-learn' package.
+    Package installation:
+    1. Via pip:
+    
+    pip install -U numpy scipy scikit-learn pycm imbalanced-learn
+    
+    2. Via Anaconda:
+    
+    conda install -c https://conda.binstar.org/pymc numpy scipy scikit-learn pymc imbalanced-learn
      
      
 ## Tutorial
-    Please simply typing command: python elsa.py
-    It gives you help information for elsa,
+    For help, type: python elsa.py
     $ python elsa.py
     Usage: python elsa.py classification scell/snuc/bulk [-m] [-i] [-g] [-o] [-s]
            python elsa.py projection     scell/snuc/bulk [-t] [-p] [-c] [-g] [-o] [-s]
 
     classification arguments:
-     -m, --cell_marker       	   list for cell marker
-     -i, --input_file        	   input data for classification
-     -g, --geneNum             	   number of top importances
-     -o, --output            	   output file for cell types
-     -s, --specify (optional)          specific cell type for extend, for example -s CD4:CD8
+     -m, --cell_marker       	   file defining cell-type labels and marker genes
+     -i, --input_file        	   file containing input data to be classified
+     -g, --geneNum             	   number of top-scoring genes to retain for classification
+     -o, --output            	   output file
+     -s, --specify (optional)      specific cell type for extend, for example -s CD4:CD8
 
     projection arguments:
-     -t, --traning           	   traning prep data
-     -p, --prediction        	   prediction prep data
+     -t, --traning           	   file containing the reference data, i.e. the traning data
+     -p, --projection        	   file containing the data to be projected, i.e. classified 
      -c, --cell_type         	   cell type list
-     -g, --geneNum           	   number of top importances
-     -o, --output            	   output file for cell types
-     -s, --specify (optional)          specific cell type for extend, for example -s CD4:CD8
+     -g, --geneNum           	   number of top-scoring genes to retain for classification
+     -o, --output            	   output file
+     -s, --specify (optional)      specific cell type for extend, for example -s CD4:CD8
      
 
 ### Classification of single-cell/single-nuc/bulk RNA-Seq data
