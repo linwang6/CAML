@@ -71,7 +71,7 @@ arguments:
   -c, --cell_type         cell type list
   -g, --geneNum           number of top importances
   -o, --output            output file for cell types
-  -s, --specify           specific cell type for t cell
+  -s, --specify           specific cell type for extending
 
 """
 
