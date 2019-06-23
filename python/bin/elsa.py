@@ -115,12 +115,12 @@ if len(sys.argv) == 13:
 if len(sys.argv) == 13:
   if 'projection' in sys.argv[1]:
     elsa='/usr/local/bin/python2.7 ../resources/elsa_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]
-    #print caml
+    #print elsa
     os.system(elsa)
 if len(sys.argv) == 15:
   if 'projection' in sys.argv[1]:
     elsa='/usr/local/bin/python2.7 ../resources/elsa_pip.py '+'-t '+'%s'%sys.argv[4]+' -p '+'%s'%sys.argv[6]+' -c '+'%s'%sys.argv[8]+' -g '+'%s'%sys.argv[10]+' -o '+'%s'%sys.argv[12]+' -s '+'%s'%sys.argv[14]
-    #print caml
+    #print elsa
     os.system(elsa)
 
 
