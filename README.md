@@ -75,7 +75,7 @@ The gene-expression data should be in a sample-by-gene tab-separated file:
 
 
 
-Format for the cell-type labels/markers file:
+The format for the cell-type labels/markers file is as follows:
 
     PBMC (peripheral blood mononuclear cell) data:
     Monocytes:"CD14";"FCGR1A";"CD68"
@@ -96,10 +96,12 @@ First, run the Classification subprogram:
     
     python elsa.py classification scell -m markers.list -i gene_exxpression_data -g 50 -o classification_output -s subtypes extension (optional)
 
-Note: setting '-g 50' should work well for most cases. Please note that when you want to classify more than 10 different classes or more, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. And the optional parameter -s, we suggest you include it when there are closely cell subtypes, for example CD4 and CD8 cell types.
+Note: setting '-g 50' should work well for most cases. If classifying more than 10 different cell types then increase the number to [number of cell types] * 10. Include the optional parameter -s when classifying cell types with correlated gene expression. For example, when classifying closely related cellular subtypes, such as T-cell subtypes.
 
 
-The output file contains all the information including the cell/sample ID, the predicted class probabilities and predicted cell/sample types, here we show two examples, one is for single cell classification (PBMC dataset was available [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets)) and another one dataset is for bulk RNA-seq data ([ivy GAP, Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
+The output file contains the cell/sample ID, the predicted class probabilities and predicted cell/sample types. 
+
+We now show two examples, one is for single cell classification (PBMC dataset was available [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets)) and another one dataset is for bulk RNA-seq data ([ivy GAP, Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
 
 
 #### scRNA-Seq Classification (PBMC dataset)
