@@ -106,7 +106,7 @@ We now demonstrate examples of single-cell and bulk-extraction RNA-seq classific
 
 #### scRNA-Seq Classification (PBMC dataset)
 
-Firstly, we applied ELSA to PBMC data set, which has seven different cell types including B cells, CD4 and CD8 T-cells, dendritic cells, Natural Killer cells, and myeloid cell types. We find that classifying T-cell subtypes is more accurate when the parameter -s is used, e.g. '-s CD4:CD8'.
+We applied ELSA to the PBMC data set, which has seven different cell types including B cells, CD4 and CD8 T-cells, dendritic cells, Natural Killer cells, and myeloid cell types. We find that classifying T-cell subtypes is more accurate when the parameter -s is used, e.g. '-s CD4:CD8'.
 
 The following the head of the output file:
     
@@ -123,10 +123,6 @@ The following the head of the output file:
     "ACGATACAGCTACCTA"      0.004612004038623754    0.0012087032246744483   0.00226395749582816     0.009699679746039132    0.24396917832147094     0.7118817116671998      0.02636476550616375     Monocytes       
     "ACGATACAGCTCTCGG"      0.7683682467453246      0.04978819822557202     0.018926906070520316    0.0969378244574078      0.024458850103481297    0.008219664615566556    0.03330030978212728     B       
 
-
-
-
-
 A tSNE plot of gene-marker based cell types (left) and predicted cell types (right)
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/PBMC_tSNE.png)
@@ -135,8 +131,7 @@ A tSNE plot of gene-marker based cell types (left) and predicted cell types (rig
 
 #### Bulk RNA-Seq Classification ([ivy GAP](http://glioblastoma.alleninstitute.org/))
 
-ELSA can also can be used for classifying bulk RNA-Seq samples. Here we classify data from the ivyGAP data, which has detailed anatomic structure annotation types.
-
+ELSA can also can be used for classifying bulk RNA-Seq samples. Here we classify data from the ivyGAP data, which has detailed anatomic structure annotations.
 
 The following is part of output file:
     
@@ -156,9 +151,7 @@ The following is part of output file:
     "300629356"     2.4256613183435653e-12  0.999999985091562       2.4256613183435653e-12  1.4901160971694644e-08  2.4256613183435653e-12  Infiltrating_Tumor 
     "301626609"     2.4256613183435653e-12  0.999999985091562       2.4256613183435653e-12  1.4901160971694644e-08  2.4256613183435653e-12  Infiltrating_Tumor 
     
-
-
-The following sankey plot of the predicted samples types compared to the anatomic structure annotation types  (http://glioblastoma.alleninstitute.org/).
+A Sankey plot of predicted samples types compared to Ivy GAP anatomic-structure annotations:  (http://glioblastoma.alleninstitute.org/).
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_sankey.png)
 
