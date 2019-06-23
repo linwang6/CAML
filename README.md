@@ -60,8 +60,10 @@ Single-cell atlases are being assembled at an accelerating pace. How best to pro
      -s, --specify (optional)      specific cell type for extend, for example -s CD4:CD8
      
 
-### Classification of single-cell/single-nuc/bulk RNA-Seq data
-For the classification of cell types, two input files are needed, one is the normalized gene expression data of single-cell/single-nuc/bulk RNA-Seq, another one file is the cell markers. The gene expression data file should be a matrix (cell by gene), the column is the gene expression and the row is the cell ID, for example,
+### Classifing single-cell/nucei or bulk RNA-Seq datasets using a list of gene markers. 
+Two input files are required: 1) a samples-by-gene expression table (e.g. log2 counts per 10K), 2) a list of cell-type labels and cell-type specific gene lists. 
+
+The gene-expression data should be in a sample-by-gene tab-separated file:
     
         "RP11-34P13.3" "FAM138A" "OR4F5" "RP11-34P13.7" "RP11-34P13.8" "RP11-34P13.14" "RP11-34P13.9"
     "AAACCTGAGCATCATC" 0 0 0 0 0 0 0
@@ -73,7 +75,7 @@ For the classification of cell types, two input files are needed, one is the nor
 
 
 
-And the format of the cell markers file should be like this:
+Format for the cell-type labels/markers file:
 
     PBMC (peripheral blood mononuclear cell) data:
     Monocytes:"CD14";"FCGR1A";"CD68"
@@ -90,11 +92,11 @@ And the format of the cell markers file should be like this:
     Leading_Edge:"SNAP25"
     ...
 
-When the files are ready, then we can run the Classification subprogram, 
+First, run the Classification subprogram: 
     
     python elsa.py classification scell -m markers.list -i gene_exxpression_data -g 50 -o classification_output -s subtypes extension (optional)
 
-Please note that the parameter -g for the feature selection, setting the '-g 50' should work well for most of the cases (Please see our paper). Please note that when you want to classify more than 10 different classes or more, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. And the optional parameter -s, we suggest you include it when there are closely cell subtypes, for example CD4 and CD8 cell types.
+Note: setting '-g 50' should work well for most cases. Please note that when you want to classify more than 10 different classes or more, please fell free to increase the number to [number of desired classification] * 10, it works well for most cases. And the optional parameter -s, we suggest you include it when there are closely cell subtypes, for example CD4 and CD8 cell types.
 
 
 The output file contains all the information including the cell/sample ID, the predicted class probabilities and predicted cell/sample types, here we show two examples, one is for single cell classification (PBMC dataset was available [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets)) and another one dataset is for bulk RNA-seq data ([ivy GAP, Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
