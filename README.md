@@ -101,14 +101,14 @@ Note: setting '-g 50' should work well for most cases. If classifying more than 
 
 The output file contains the cell/sample ID, the predicted class probabilities and predicted cell/sample types. 
 
-We now show two examples, one is for single cell classification (PBMC dataset was available [here](https://support.10xgenomics.com/single-cell-gene-expression/datasets)) and another one dataset is for bulk RNA-seq data ([ivy GAP, Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/))
+We now demonstrate examples of single-cell and bulk-extraction RNA-seq classification using a scRNA-seq PBMC dataset available [from 10X Genomics](https://support.10xgenomics.com/single-cell-gene-expression/datasets), and bulk RNA-seq of GBMs available at the [Ivy Glioblastoma Atlas Project](http://glioblastoma.alleninstitute.org/).
 
 
 #### scRNA-Seq Classification (PBMC dataset)
 
-Firstly, we applied the tool to PBMC data set, which has seven different cell types including CD4, CD8, DC, NK, B, CD34 and Monocyte type. For this type of dataset (when you want to classify one type cell into different subtypes, for example, classifying T cell into CD4 and CD8 T cell), we highly recommend add the parameter '-s CD4:CD8', which gives more accurate classification results.
+Firstly, we applied ELSA to PBMC data set, which has seven different cell types including B cells, CD4 and CD8 T-cells, dendritic cells, Natural Killer cells, and myeloid cell types. We find that classifying T-cell subtypes is more accurate when the parameter -s is used, e.g. '-s CD4:CD8'.
 
-The following is part of the output file:
+The following the head of the output file:
     
     Cell_ID Probability_of_CD34   Probability_of_B  Probability_of_CD4    Probability_of_CD8  Probability_of_DC    Probability_of_Monocytes    Probability_of_NK   Predicted_types
     "AAACCTGAGCTAACTC"      0.00037265905209929966  0.00019461235341044442  0.018780001757902304    0.0069075896125628325   0.002850644369198496    0.9516413165740238      0.01925317628080269     Monocytes       
@@ -127,7 +127,7 @@ The following is part of the output file:
 
 
 
-The tSNE plot of gene markers based cell types (left) and predicted cell types (right)
+A tSNE plot of gene-marker based cell types (left) and predicted cell types (right)
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/PBMC_tSNE.png)
 
@@ -135,7 +135,7 @@ The tSNE plot of gene markers based cell types (left) and predicted cell types (
 
 #### Bulk RNA-Seq Classification ([ivy GAP](http://glioblastoma.alleninstitute.org/))
 
-Our tool also can be used for bulk RNA-Seq samples types calssification, here we show the classification of the ivyGAP data, which has detailed anatomic structure annotation types.
+ELSA can also can be used for classifying bulk RNA-Seq samples. Here we classify data from the ivyGAP data, which has detailed anatomic structure annotation types.
 
 
 The following is part of output file:
