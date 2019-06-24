@@ -106,7 +106,7 @@ We now demonstrate examples of single-cell and bulk-extraction RNA-seq classific
 
 #### scRNA-Seq Classification (PBMC dataset)
 
-We applied ELSA to the PBMC data set, which has seven different cell types including B cells, CD4 and CD8 T-cells, dendritic cells, Natural Killer cells, and myeloid cell types. We find that classifying T-cell subtypes is more accurate when the parameter -s is used, e.g. '-s CD4:CD8'.
+We apply ELSA to the PBMC data set, which has several different cell types including B cells, CD4 and CD8 T-cells, dendritic cells, Natural Killer cells, and myeloid cell types. We find that classifying T-cell subtypes is more accurate when the parameter -s is used, e.g. '-s CD4:CD8'.
 
 The following the head of the output file:
     
@@ -123,7 +123,7 @@ The following the head of the output file:
     "ACGATACAGCTACCTA"      0.004612004038623754    0.0012087032246744483   0.00226395749582816     0.009699679746039132    0.24396917832147094     0.7118817116671998      0.02636476550616375     Monocytes       
     "ACGATACAGCTCTCGG"      0.7683682467453246      0.04978819822557202     0.018926906070520316    0.0969378244574078      0.024458850103481297    0.008219664615566556    0.03330030978212728     B       
 
-A tSNE plot of gene-marker based cell types (left) and predicted cell types (right)
+A tSNE plot of gene-marker based cell types (left) and predicted cell types (right):
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/PBMC_tSNE.png)
 
@@ -133,7 +133,7 @@ A tSNE plot of gene-marker based cell types (left) and predicted cell types (rig
 
 ELSA can also can be used for classifying bulk RNA-Seq samples. Here we classify data from the ivyGAP data, which has detailed anatomic structure annotations.
 
-The following is part of output file:
+The following is the head of the output file:
     
     Cell_ID Probability_of_Cellular_Tumor   Probability_Infiltrating_Tumor   Probability_Leading_Edge Probability_Microvascular_proliferation    Probability_Pseudopalisading_cells Predicted_types
     "304950296"     2.6800024884849247e-14  1.8189894035424017e-12  2.6800024884849247e-14  0.9999999999981006      2.6800024884849247e-14  Microvascular_proliferation 
@@ -151,13 +151,13 @@ The following is part of output file:
     "300629356"     2.4256613183435653e-12  0.999999985091562       2.4256613183435653e-12  1.4901160971694644e-08  2.4256613183435653e-12  Infiltrating_Tumor 
     "301626609"     2.4256613183435653e-12  0.999999985091562       2.4256613183435653e-12  1.4901160971694644e-08  2.4256613183435653e-12  Infiltrating_Tumor 
     
-A Sankey plot of predicted samples types compared to Ivy GAP anatomic-structure annotations:  (http://glioblastoma.alleninstitute.org/).
+A Sankey plot of predicted sample types compared to Ivy GAP (http://glioblastoma.alleninstitute.org/) anatomic-structure annotations:
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_sankey.png)
 
 
 
-The tSNE plot of predicted samples types and the anatomic structure annotation types
+A tSNE plot of predicted sample types and their anatomic structure annotations:
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/IVY_classification_tSNE.png)
 
@@ -173,20 +173,19 @@ The tSNE plot of predicted samples types and the anatomic structure annotation t
 Projection of the Smart-seq2 platform (human pancreas data sets, [Segerstolpe et al](https://www.sciencedirect.com/science/article/pii/S1550413116304363?via%3Dihub).) to inDrop platform ([Baron et al](https://www.sciencedirect.com/science/article/pii/S2405471216302666?via%3Dihub).)
 
 
-The tSNE plot of cell types of reference (left) and projection (right)
+A tSNE plot comparing reference cell-type labels (left) to the labels of their projections (right):
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/Pancreas_tSNE.png)
 
 
-The following sankey plot of the cell types of reference and projection
+A Sankey plot comparing reference and projection cell-type labels:
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/Pancreas_sankey.png)
 
 
 #### Projection of snRNA-Seq to scRNA-Seq.
 
-The snRNA-Seq data (from cortex, Lake et al) and scRNA-Seq data (Lake et al) was available [here](https://www.nature.com/articles/s41598-017-04426-w).
+Next we use human cortex sc/snRNA-seq data, available from [Lake et al.](https://www.nature.com/articles/s41598-017-04426-w).
 
-
-The following sankey plot is the projection of snRNA-Seq to scRNA-Seq.
+A Sankey plot of the projection of single-cell to single-nuclei RNA-seq data.
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/snRNA-Seq2scRNA-Seq.png)
 
@@ -194,8 +193,7 @@ The following sankey plot is the projection of snRNA-Seq to scRNA-Seq.
 
 #### Projection of bulk RNA-Seq to scRNA-Seq.
 
-
-The following sankey plot is the projection of bulk RNA-Seq data ([ivy GAP](http://glioblastoma.alleninstitute.org/)) to scRNA-Seq (MES: mesenchymal, PN: proneural, [our novel GBM scRNA-Seq data]()). 
+A Sankey plot of the projection of bulk RNA-Seq data from the [ivy GAP](http://glioblastoma.alleninstitute.org/) to scRNA-seq from human glioblastomas. 
 
 ![alt text](https://github.com/linwang6/CAML/blob/master/inst/ivyGAP2GBM.png)
 
