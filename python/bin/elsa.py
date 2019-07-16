@@ -24,7 +24,7 @@
 import re
 import os
 import sys
-import imp
+import importlib
 import warnings
 #warnings.filterwarnings('ignore')
 import numpy as np
