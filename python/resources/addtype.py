@@ -13,14 +13,14 @@ t={}
 for line in input1:
     line=line.strip()
     lineE=line.split()
-    t[lineE[2]]=lineE[3]
+    t[lineE[0]]=lineE[1]
 
-for line in f2:
+for line in input2:
     line=line.strip()
     lineE=line.split()
     if '"' in lineE[1]:
         print >>output,line+'   '+'"Types"'
-    if '"' not in h[1]:
+    if '"' not in lineE[1]:
         print >>output,line+'   '+t[lineE[0]]
 
 input1.close()
