@@ -13,7 +13,7 @@ t={}
 for line in input1:
     line=line.strip()
     lineE=line.split()
-    t[lineE[0]]=lineE[1]
+    t[lineE[2]]=lineE[3]
 
 for line in input2:
     line=line.strip()
