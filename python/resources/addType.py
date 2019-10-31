@@ -22,7 +22,7 @@ for line in input2:
         print >>output,line+'   '+'"Types"'
     if '"' not in lineE[1]:
         print >>output,line+'   '+t[lineE[0]]
-
+   
 input1.close()
 input2.close()
 output.close()
