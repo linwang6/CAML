@@ -240,6 +240,7 @@ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>  Everyone i
 Please cite our paper if our paper or code helped you.
 
 Our manuscript is available on [here](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btaa137/5762611).
+Lin Wang, Francisca Catalan, Karin Shamardani, Husam Babikir, Aaron Diaz. Ensemble learning for classifying single-cell data and projection across reference atlases. Bioinformatics, 2020.
 
 
 ## References
